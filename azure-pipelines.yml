@@ -30,7 +30,7 @@ stages:
   - job: Archive
     displayName: Archive
     pool:
-      agent: $(vmImageName)
+      name: $(vmImageName)
     steps:   
     - task: AzureAppServiceSettings@1
       inputs:
@@ -65,7 +65,7 @@ stages:
     displayName: Deploy
     environment: $(environmentName)
     pool: 
-      agent: $(vmImageName)
+      name: $(vmImageName)
     strategy:
       runOnce:
         deploy:
