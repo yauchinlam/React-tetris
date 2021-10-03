@@ -21,7 +21,7 @@ variables:
   environmentName: 'YourLinuxApp'
  
   # Agent VM image name
-  agent: 'ubuntu-latest'
+  vmImageName: 'Default'
   
 stages:
 - stage: Archive
