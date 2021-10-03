@@ -21,7 +21,7 @@ variables:
   environmentName: 'uniquewebappnameLam'
  
   # Agent VM image name
-  vmImageName: 'Default'
+  vmImageName: 'ubuntu-latest'
   
 stages:
 - stage: Archive
@@ -30,7 +30,7 @@ stages:
   - job: Archive
     displayName: Archive
     pool:
-      name: $(vmImageName)
+      vmImage: $(vmImageName)
     steps:   
     - task: AzureAppServiceSettings@1
       inputs:
@@ -65,7 +65,7 @@ stages:
     displayName: Deploy
     environment: $(environmentName)
     pool: 
-      name: $(vmImageName)
+      vmImage: $(vmImageName)
     strategy:
       runOnce:
         deploy:
@@ -76,6 +76,6 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              runtimeStack: 'NODE|14.x'
+              runtimeStack: 'NODE|10.14'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
  
