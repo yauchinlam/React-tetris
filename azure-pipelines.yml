@@ -12,13 +12,13 @@ variables:
   azureSubscription: 'TRAINING'
   
   # Web app name
-  webAppName: 'YourLinuxApp '
+  webAppName: 'uniquewebappnameLam'
   
   # Resource group
   resourceGroupName: 'Azure_Service'
  
   # Environment name
-  environmentName: 'YourLinuxApp'
+  environmentName: 'uniquewebappnameLam'
  
   # Agent VM image name
   vmImageName: 'Default'
